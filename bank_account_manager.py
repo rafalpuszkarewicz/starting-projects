@@ -4,6 +4,7 @@ class Account:
         self.balance = balance
 
     def __str__(self):
+        # shows value with two decimal numbers
         return "${}".format(round(self.balance, 2))
 
     def deposit(self, dep_value):
@@ -17,7 +18,7 @@ class Account:
 
 
 class CheckingAccount(Account):
-    # creating checking account wit starting balance defined by the user
+    # creating checking account with starting balance defined by the user
     def __init__(self, acc_num, str_balance):
         super().__init__(acc_num, str_balance)
 
@@ -28,7 +29,7 @@ class CheckingAccount(Account):
 
 
 class SavingsAccount(Account):
-    # creating savings account wit starting balance defined by the user
+    # creating savings account with starting balance defined by the user
     def __init__(self, acc_num, str_balance):
         super().__init__(acc_num, str_balance)
 
@@ -39,7 +40,7 @@ class SavingsAccount(Account):
 
 
 class BusinessAccount(Account):
-    # creating business account wit starting balance defined by the user
+    # creating business account with starting balance defined by the user
     def __init__(self, acc_num, str_balance):
         super().__init__(acc_num, str_balance)
 
@@ -47,9 +48,3 @@ class BusinessAccount(Account):
         return "Business account number: #{} \nBalance: {}".format(
             self.acc_num, Account.__str__(self)
         )
-
-
-check = CheckingAccount(1234, 100)
-
-
-print(check)
